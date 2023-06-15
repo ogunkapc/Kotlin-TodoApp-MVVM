@@ -23,7 +23,7 @@ class TodoListViewModel @Inject constructor(
 
     private var deletedTodo: Todo? = null
 
-    fun OnEvent(event: TodoListEvent) {
+    fun onEvent(event: TodoListEvent) {
         when(event) {
             is TodoListEvent.OnTodoClick -> {
                 sendUiEvent(UiEvent.Navigate(Routes.ADD_EDIT_TODO + "?todoID = ${event.todo.id}"))

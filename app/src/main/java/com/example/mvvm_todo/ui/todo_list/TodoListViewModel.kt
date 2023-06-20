@@ -59,7 +59,6 @@ class TodoListViewModel @Inject constructor(
                     )
                 }
             }
-            else -> {}
         }
     }
 

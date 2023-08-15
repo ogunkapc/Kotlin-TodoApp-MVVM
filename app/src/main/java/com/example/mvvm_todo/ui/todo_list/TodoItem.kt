@@ -30,6 +30,16 @@ fun TodoItem(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
+        IconButton(
+            onClick = {
+                onEvent(TodoListEvent.OnDeleteTodoClick(todo))
+            }
+        ) {
+            Icon(
+                imageVector = Icons.Default.Delete,
+                contentDescription = "Delete"
+            )
+        }
         Column(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.Center,
@@ -42,17 +52,7 @@ fun TodoItem(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold
                 )
-                Spacer(modifier = Modifier.width(8.dp))
-                IconButton(
-                    onClick = {
-                    onEvent(TodoListEvent.OnDeleteTodoClick(todo))
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Delete,
-                        contentDescription = "Delete"
-                    )
-                }
+//                Spacer(modifier = Modifier.width(8.dp))
 
             }
             todo.description?.let {
